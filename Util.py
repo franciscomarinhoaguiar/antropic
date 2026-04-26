@@ -32,7 +32,7 @@ class Util:
         )
         return message.content[0].text
     
-    def chat(self,messages, system=None, temperature=1.0, stopSequence=None):
+    def chat(self,messages, system=None, temperature=1.0, stop_sequences=None):
         params = {
         "model": self.model,
         "max_tokens": 1000,
@@ -42,8 +42,8 @@ class Util:
     
         if system:
             params["system"] = system
-        if system:
-            params["stop"] = stopSequence
+        if stop_sequences:
+            params["stop_sequences"] = stop_sequences
     
         message = self.client.messages.create(**params)
         return message.content[0].text

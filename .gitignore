@@ -31,5 +31,9 @@ htmlcov/
 .env.*
 *.env
 
+
 # macOS
 .DS_Store
+
+#vccode
+.vscode
